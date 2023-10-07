@@ -1,0 +1,128 @@
+Data Cleaning with Python and Pandas
+In this project, I discuss various useful techniques to clean a messy dataset with Python, NumPy and Pandas.
+
+This project is divided into various sections which are listed below:-
+
+Table of Contents:-
+Introduction to Python data cleaning
+
+Tidy data
+
+Signs of an untidy dataset
+
+Python data cleansing – prerequisites
+
+Import the required Python libraries
+
+The source dataset
+
+Exploratory data analysis (EDA)
+
+Visual exploratory data analysis (Visual EDA)
+
+Findings of EDA and Visual EDA
+
+Split the ‘age_sex’ column into two separate columns
+
+Reorder the column labels
+
+Dealing with negative numerical values
+
+Dealing with outliers
+
+Dealing with missing numerical values
+
+Check with ASSERT statement
+
+Reshaping the data into tidy data format
+
+1. Introduction to Python data cleaning
+Whenever we have to work with a real world dataset, the first problem that we face is to clean it. The real world dataset never comes clean. It consists lot of discrepancies in the dataset. So, we have to clean the dataset for further processing.
+
+Cleaning data is the process of preparing the dataset for analysis. It is very important because the accuracy of machine learning or data mining models are affected because of poor quality of data.
+
+So, data scientists spend a large amount of their time cleaning the dataset and transform them into a format with which they can work with. In fact, data scientists spend 80% of their time cleaning the data.
+
+A very common scenario is that the dataset contains missing values coded as NaN. Also, the missing values are coded in different ways. The dataset may contain negative or invalid values. It may contain outliers. It may be in the untidy format. All of these are examples of a messy dataset.
+
+In this project, I present several useful ways to handle these discrepancies in the dataset.
+
+2. Tidy data format
+Data comes in a wide variety of shapes and formats. Hadley Wickham, the Chief Scientist at RStudio, write a paper about tidy data in 2014 that formalizes the shape of the data. So, it gives us a goal when formatting the data.
+
+He states in his paper that –
+
+"Tidy data provides a standard way to organize data values within a dataset."
+
+There are three principles of tidy data. These are as follows:-
+
+• Columns represent separate variables.
+
+• Rows represent individual observations.
+
+• Observational units form tables.
+
+Tidy data makes it easier to fix common data problems. So, we need to transform the untidy dataset into tidy data.
+
+Before we look into the details of cleaning the dataset, we have to understand what constitutes an untidy data. We need to diagnose our data and find common signs of a messy dataset.
+
+3. Signs of an untidy dataset
+We have to take a closer look to find common signs of a messy dataset. These common signs are as follows:-
+
+• Missing numerical data
+
+Missing numerical data needs to be identified and addressed. Either they need to be deleted or replaced with a suitable test statistic.
+
+• Untidy data
+
+Untidy dataset can contain multiple problems. They prevent us from transforming the messy dataset into a clean dataset that is suitable for analysis.
+
+• Unexpected data values
+
+Mismatched data types of a column and data values can cause potential problems. They need to be investigated and solved.
+
+• Inconsistent column names
+
+Column names contain inconsistent capitalizations and bad characters. They need to be addressed properly.
+
+• Outliers
+
+Outliers need to be detected. They pose potential problems needs to be investigated and removed.
+
+• Duplicate rows and columns
+
+Duplicate rows and columns make data redundant. They can bias an analysis. Hence, they needs to be found and dropped.
+
+4. Python data cleaning - prerequisites
+We need three Python libraries for the data cleansing process – NumPy, Pandas and Matplotlib.
+
+• NumPy – NumPy is the fundamental Python library for scientific computing. It adds support for large and multi-dimensional arrays and matrices. It also supports large collection of high-level mathematical functions to operate on these arrays.
+
+• Pandas - Pandas is a software library for Python programming language which provide tools for data manipulation and analysis tasks. It will enable us to manipulate numerical tables and time series using data structures and operations.
+
+• Matplotlib - Matplotlib is the core data visualization library of Python programming language. It provides an object-oriented API for embedding plots into applications.
+
+5. Import the required Python libraries
+We have seen that we need three Python libraries – NumPy, Pandas and Matplotlib for the data cleaning process. We need to import these libraries before we actually start using them. We can import them with their usual shorthand notation as follows:-
+
+# import the Python libraries
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+6. The source dataset
+For this project, I have created a fictitious dataset. The dataset consists of details of my facebook friends.
+
+The dataset can be imported as follows:-
+
+data = "C:/cleaning_data/friends.txt"
+
+df = pd.read_csv(data)
+7. Exploratory data analysis
+Now, it is time to understand the data. We should diagnose the data for any discrepancies by doing exploratory data analysis. We should proceed as follows:-
+
+df.shape attribute
+We can check the dimensions of the data with df.shape attribute.
+
+df.shape
